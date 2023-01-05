@@ -11,3 +11,18 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 ![Three tier](./images/Three%20tier%20architecture.png)
 
 
+### PREPARE A WEB SERVER
+* Launch an EC2 instance that will serve as "Web Server". I will choose Red hat Operating system for the servers. Create 3 volumes in the same AZ as your Web Server EC2, each of 10 GiB. 
+
+* Login to the AWS console
+
+* Search for EC2 (Elastic Compute Cloud)
+
+* Select your preferred region (the closest to you) and launch a new EC2 instance of t2.micro family with Ubuntu Server 20.04 LTS (HVM)
+    Type a name e.g web-server Click create a new key pair, use any name of your choice as the name for the pem file and select `.pem`.
+
+    * Linux/Mac users, choose .pem for use with openssh. This allows you to connect to your server using open ssh clients.
+    
+    * For windows users choose .ppk for use with putty. Putty is a software that lets you connect to servers remotely.
+
+* Save your private key (.pem file) securely and do not share it with anyone! If you lose it, you will not be able to connect to your server ever again!
