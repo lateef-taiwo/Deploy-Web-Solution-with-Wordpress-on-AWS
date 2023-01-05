@@ -28,6 +28,9 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
 * Save your private key (.pem file) securely and do not share it with anyone! If you lose it, you will not be able to connect to your server ever again!
 
+* Create 3 volumes in the same AZ as your Web Server EC2, each of 10 GiB.
+
+
 * On your local computer, open the terminal and change directory to the Downloads folder, type
 
     `cd ~/Downloads`
@@ -40,4 +43,5 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
    `ssh -i web-server.pem ec2-user@<public ip address>`
 
-The public ip address of my virtual server is 13.40.64.167 as shown in the image Note: For Ubuntu server, the usernanme is ubuntu and for other servers like Fedora Amazon Machine image (AMI), the username is fedora or ec2-user.
+ Note: For Red hat, the usernanme is ec2 while for Ubuntu the username is ubuntu.
+
