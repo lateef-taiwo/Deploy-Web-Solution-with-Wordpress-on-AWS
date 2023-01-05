@@ -181,8 +181,34 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
   ![var](./images/var%20directory.png)
 
+* Use `rsync` utility to back up all the files in the log directory /var/log into /home/recovery/logs (This is required before mounting the file system). Type
 
+    `sudo rsync -av /var/log/. /home/recovery/logs/`
 
+  ![rsync](./images/rsync.png)
+
+* Mount /var/log on logs-lv logical volume. (Note that all the existing data on /var/log will be deleted. This is why the last step above is very
+important)
+
+   `sudo mount /dev/webdata-vg/logs-lv /var/log`
+
+* Restore log files back into /var/log directory
+
+    `sudo rsync -av /home/recovery/logs/. /var/log`
+
+    ![rsync](./images/rsync%20restore.png)
+
+* Update `/etc/fstab` file so that the mount configuration will persist after restart of the server. The UUID of the device will be used to update the /etc/fstab file;
+
+  `sudo blkid`
+
+  ![blkid](./images/blkid.png)
+
+* Now type `sudo vi /etc/fstab`
+
+* Update /etc/fstab in this format using your own UUID as shown below.
+
+  ![fstab](./images/etcfstab.png)
 
 
 
