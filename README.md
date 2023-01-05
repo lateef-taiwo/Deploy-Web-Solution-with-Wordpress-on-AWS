@@ -167,6 +167,19 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
     ![mkfs](./images/mkfs.png)
 
+* Create /var/www/html directory to store website files
+
+    `sudo mkdir -p /var/www/html`
+
+* Create /home/recovery/logs to store backup of log data
+ 
+  `sudo mkdir -p /home/recovery/logs`
+
+* Mount /var/www/html on apps-lv logical volume
+ 
+  `sudo mount /dev/webdata-vg/apps-lv /var/www/html/`
+
+  ![var](./images/var%20directory.png)
 
 
 
