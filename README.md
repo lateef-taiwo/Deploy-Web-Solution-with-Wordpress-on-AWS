@@ -350,3 +350,5 @@ ________
 
 ### STEP 5 - CONFIGURE DATABASE TO WORK WITH WORDPRESS
 Open MySQL port 3306 on DB Server EC2. For extra security, you shall allow access to the DB server ONLY from your Web Server’s IP address, so in the Inbound Rule configuration specify source as /32
+
+![security gropus](./images/Security%20groups.png)
