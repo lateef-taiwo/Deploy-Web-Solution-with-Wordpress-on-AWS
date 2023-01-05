@@ -74,11 +74,17 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
    ![ssh](./images/ssh.png)
 
- Note: For Red hat, the usernanme is ec2-user while for Ubuntu the username is ubuntu.
+    Note: For Red hat, the usernanme is ec2-user while for Ubuntu the username is ubuntu.
 
- * check the vloumes created by typing `lsblk`. You will see that the 3 volumes are "xvdf" "xvdg" and "xvdh" respectively as shown below.
+ * check the vloumes created by typing `lsblk`. You will see that the 3 volumes are "xvdf" "xvdg" and "xvdh" of size 10GB each respectively as shown below.
 
- ![lsblk](./images/lsblk.png)
+    ![lsblk](./images/lsblk.png)
+
+ * Use `df -h` command to see all mounts and free space on your server. `df` means disk free and the flag `-h` displays the output in a human readable format.
+
+    ![df](./images/disk%20free.png)
+
+
 
 
 
