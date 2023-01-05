@@ -76,3 +76,9 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
  Note: For Red hat, the usernanme is ec2-user while for Ubuntu the username is ubuntu.
 
+ * check the vloumes created by typing `lsblk`. You will see that the 3 volumes are "xvdf" "xvdg" and "xvdh" respectively as shown below.
+
+ ![lsblk](./images/lsblk.png)
+
+
+
