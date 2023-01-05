@@ -115,9 +115,64 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 * Type `sudo lvmdiskscan` command to check for available partitions.
 
  ![lvmdiskscan](./images/lvmdiskscan.png)
-
-* Use `pvcreate` utility to mark each of 3 disks as physical volumes (PVs) to be used by LVM
+ * Use `pvcreate` utility to mark each of 3 disks as physical volumes (PVs) to be used by LVM
  
+    `sudo pvcreate /dev/xvdf1`
+
+    `sudo pvcreate /dev/xvdg1`
+
+    `sudo pvcreate /dev/xvdh1`
+
+![pvcreate](./images/pvcreate.png)
+
+* Verify that your Physical volume has been created successfully by running `sudo pvs`
+
+![pvs](./images/pvs.png)
+
+* Use `vgcreate` utility to add all 3 PVs to a volume group (VG). Name the VG webdata-vg. Type
+
+`sudo vgcreate webdata-vg /dev/xvdh1 /dev/xvdg1 /dev/xvdf1`
+
+* Verify that your VG has been created successfully by running `sudo vgs`
+
+![vgs](./images/vgs.png)
+
+* Use `lvcreate` utility to create 2 logical volumes. Name one apps-lv and use half of the PV size. Name the second one logs-lv and use the remaining space of the PV size. NOTE: apps-lv will be used to store data for the Website while, logs-lv will be used to store data for logs.
+
+    `sudo lvcreate -n apps-lv -L 14G webdata-vg`
+
+    `sudo lvcreate -n logs-lv -L 14G webdata-vg`
+
+* Verify that your Logical Volume has been created successfully by typing `sudo lvs`
+
+![lvs](./images/lvs.png)
+
+* Verify the entire setup by typing the following commands
+
+    `sudo vgdisplay -v #view complete setup - VG, PV, and LV`
+
+   `sudo lsblk`
+
+   ![verify](./images/verify.png)
+
+   ![verify](./images/verify%20partition.png)
+
+   ![verify](./images/verify%20lsblk.png)
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
