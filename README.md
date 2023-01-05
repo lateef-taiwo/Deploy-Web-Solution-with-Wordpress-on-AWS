@@ -88,4 +88,22 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
     `sudo gdisk /dev/xvdf`
 
+    * Type p to view the partion table. 
+
+    * Type n to add a new partition. Press enter repeatedly to use the default values
+
+    * Type w to write partition changes to disk. T ype Y on prompt
+
     ![gpt](./images/gpt1.png)
+
+    * Repeat the process for the remaining two disks
+
+    ![gpt](./images/gpt2.png)
+
+    ![gpt](./images/gpt3.png)
+
+* Use `lsblk` utility to view the newly configured partition on each of the 3 disks.
+
+! [lsblk](./images/partition%20check.png)
+
+
