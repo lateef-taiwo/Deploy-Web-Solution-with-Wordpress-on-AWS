@@ -54,6 +54,9 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
     9.  Repeat steps `2` to `8` for two more volumes so that we can have the 3 volumes in all.
 
+    ![Attach](./images/Attach%20volume%202.png)
+
+    ![Attach](./images/Attach%20volume%203.png)
 
 * On your local computer, open the terminal and change directory to the Downloads folder, type
 
@@ -63,9 +66,13 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
     `sudo chmod 0400 . pem`
 
+    ![chmod](./images/chmod.png)
+
 * Connect to the instance by running
 
    `ssh -i web-server.pem ec2-user@<public ip address>`
 
- Note: For Red hat, the usernanme is ec2 while for Ubuntu the username is ubuntu.
+   ![ssh](./images/ssh.png)
+
+ Note: For Red hat, the usernanme is ec2-user while for Ubuntu the username is ubuntu.
 
