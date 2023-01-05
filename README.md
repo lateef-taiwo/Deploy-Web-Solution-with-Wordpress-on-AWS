@@ -159,17 +159,13 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
    ![verify](./images/verify%20lsblk.png)
 
-   
+ * Use `mkfs.ext4` to format the logical volumes with ext4 filesystem
 
+    `sudo mkfs -t ext4 /dev/webdata-vg/apps-lv`
 
+    `sudo mkfs -t ext4 /dev/webdata-vg/logs-lv`
 
-
-
-
-
-
-
-
+    ![mkfs](./images/mkfs.png)
 
 
 
