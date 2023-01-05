@@ -87,3 +87,5 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 * Use gdisk utility to create a single partition on each of the 3 disks. First start with disk xvdf.
 
     `sudo gdisk /dev/xvdf`
+
+    ![gpt](./images/gpt1.png)
