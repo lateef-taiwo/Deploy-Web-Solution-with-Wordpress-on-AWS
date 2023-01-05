@@ -28,19 +28,30 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
 * Save your private key (.pem file) securely and do not share it with anyone! If you lose it, you will not be able to connect to your server ever again!
 
+![EC2](./images/EC2.png)
+
 * Create 3 volumes in the same AZ as your Web Server EC2, each of 10 GiB.
 
-    * On the left hand side of the aws console, under Elastic Blob Store, Click on `Volume`.
+    1.  On the left hand side of the aws console, under Elastic Blob Store, Click on `Volume`.
 
-    * Click create volume
+    2.  Click create volume
 
-    * Choose a small size of 10GB
+    3.  Choose a small size of 10GB
 
-    * change the availability zone to eu-west-2b 
+    4. change the availability zone to eu-west-2b 
     
-    * Leave other settings default and click 'Create volume'
+    5.  Leave other settings default and click 'Create volume'
 
-    * Next, select the create volume, right click and click `Attach volume`.
+    ![Volume](./images/volume.png)
+
+    6.  Next, select the volume created, right click and click `Attach volume`.
+
+    7.  Select the web server instance created. I named my server `web server`. The device name will be `/dev/sdf` but newer Linux kernels may rename your devices to `/dev/xvdf` through /dev/xvdp internally, even when the device name entered is `/dev/sdf`
+
+    
+    8.  Click Attach volume 
+
+    9.  Repeat steps `2` to `8` for two more volumes so that we can have the 3 volumes in all.
 
 
 
