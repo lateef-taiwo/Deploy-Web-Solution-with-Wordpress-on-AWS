@@ -30,6 +30,7 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
 * Create 3 volumes in the same AZ as your Web Server EC2, each of 10 GiB.
 
+    * On the left hand side of the aws console, under Elastic Blob Store, CLick on Volume.
 
 * On your local computer, open the terminal and change directory to the Downloads folder, type
 
