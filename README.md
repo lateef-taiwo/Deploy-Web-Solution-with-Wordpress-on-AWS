@@ -47,12 +47,12 @@ You will gain practical experience that demonstrates `three-tier architecture` w
     6.  Next, select the volume created, right click and click `Attach volume`.
 
     7.  Select the web server instance created. I named my server `web server`. The device name will be `/dev/sdf` but newer Linux kernels may rename your devices to `/dev/xvdf` through /dev/xvdp internally, even when the device name entered is `/dev/sdf`
-
     
     8.  Click Attach volume 
 
-    9.  Repeat steps `2` to `8` for two more volumes so that we can have the 3 volumes in all.
+    ![Attach](./images/Attach%20volume.png)
 
+    9.  Repeat steps `2` to `8` for two more volumes so that we can have the 3 volumes in all.
 
 
 * On your local computer, open the terminal and change directory to the Downloads folder, type
