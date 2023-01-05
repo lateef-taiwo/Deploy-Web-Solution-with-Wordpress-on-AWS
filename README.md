@@ -352,3 +352,12 @@ ________
 Open MySQL port 3306 on DB Server EC2. For extra security, you shall allow access to the DB server ONLY from your Web Server’s IP address, so in the Inbound Rule configuration specify source as /32
 
 ![security gropus](./images/Security%20groups.png)
+
+* Install MySQL client and test that you can connect from your Web Server to your DB server by using mysql-client.
+
+  `sudo yum install mysql`
+
+  ![mysql client](./images/mysql%20client.png)
+  
+
+
