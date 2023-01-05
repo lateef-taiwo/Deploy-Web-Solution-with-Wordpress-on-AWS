@@ -235,5 +235,67 @@ ________
 
   ![db-server setup](./images/db%20server%20setup.png)
 
+------
+______
+
+### STEP 3 - INSTALL WORDPRESS ON THE WEB SERVER
+* First, update repository
+
+  `sudo yum -y update`
+  
+  ![update](./images/server%20update.png)
+
+* Next, install wget, Apache and it’s dependencies.
+
+  `sudo yum -y install wget httpd php php-mysqlnd php-fpm php-json`
+
+  ![wget](./images/wget%20install.png)
+
+  ![Apache](./images/Apache%20install.png)
+
+  ![Dependencies](./images/dependencies%20install.png)
+
+* Enable, start and check the status Apache service to ensure that it is active and running.
+
+  `sudo systemctl enable httpd`
+
+  `sudo systemctl start httpd`
+
+  `sudo systemctl status httpd`
+
+  ![Apacher service](./images/Apache%20service.png)
+
+* Install PHP and its depemdencies
+
+  `sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm`
+
+  `sudo yum install yum-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm`
+
+  `sudo yum module list php`
+
+  `sudo yum module reset php`
+
+  `sudo yum module enable php:remi-7.4`
+
+
+  `sudo yum install php php-opcache php-gd php-curl php-mysqlnd`
+
+  ![install](./images/yum%20install.png)
+
+  ![install](./images/php%20install.png)
+
+* Enable and start php-fpm
+  
+  `sudo systemctl start php-fpm`
+
+  `sudo systemctl enable php-fpm`
+
+* Set SELinux boolean value to 1
+  `sudo setsebool -P httpd_execmem 1`
+
+  ![status](./images/status.png)
+
+
+
 
 
