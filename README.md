@@ -295,7 +295,46 @@ ______
 
   ![status](./images/status.png)
 
+* Restart Apache
+  
+  `sudo systemctl restart httpd`
 
+* Download wordpress and copy wordpress to var/www/html
 
+      mkdir wordpress
+      cd   wordpress
+      sudo wget http://wordpress.org/latest.tar.gz
+      sudo tar xzvf latest.tar.gz
+      sudo rm -rf latest.tar.gz
+      cp wordpress/wp-config-sample.php wordpress/wp-config.php
+      cp -R wordpress /var/www/html/
+  
+    ![wordpress](./images/wordpress.png)
 
+    ![copy](./images/copy%20wordpress.png)
 
+    * Configure SELinux Policies
+
+          sudo chown -R apache:apache /var/www/html/wordpress
+          sudo chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R
+          sudo setsebool -P httpd_can_network_connect=1
+          sudo setsebool -P httpd_can_network_connect_db 1
+
+      ![selinux](./images/selinux.png)
+
+------------
+____________
+
+###  STEP 4 - INSTALL MYSQL ON DATABASE SERVER
+
+  `sudo yum update`
+
+  ![update](./images/update%20db.png)
+
+  `sudo yum install mysql-server`
+
+  ![mysql](./images/msql%20install.png)
+
+  ![mysql](./images/mysql%20install%20complete.png)
+
+   
