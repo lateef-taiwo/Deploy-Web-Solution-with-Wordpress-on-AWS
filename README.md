@@ -104,7 +104,7 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
 * Use `lsblk` utility to view the newly configured partition on each of the 3 disks.
 
-! [lsblk](./images/partition%20check.png)
+![lsblk](./images/partition%20check.png)
 
 * Install `lvm2` package using `sudo yum install -y lvm2 `
 
