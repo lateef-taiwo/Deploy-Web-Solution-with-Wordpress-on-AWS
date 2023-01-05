@@ -36,7 +36,12 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
     * Choose a small size of 10GB
 
+    * change the availability zone to eu-west-2b 
+    
     * Leave other settings default and click 'Create volume'
+
+    * Next, select the create volume, right click and click `Attach volume`.
+
 
 
 * On your local computer, open the terminal and change directory to the Downloads folder, type
