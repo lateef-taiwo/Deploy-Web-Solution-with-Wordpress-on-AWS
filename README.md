@@ -76,7 +76,7 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
     Note: For Red hat, the usernanme is ec2-user while for Ubuntu the username is ubuntu.
 
- * check the vloumes created by typing `lsblk`. You will see that the 3 volumes are "xvdf" "xvdg" and "xvdh" of size 10GB each respectively as shown below.
+ * check the volumes created by typing `lsblk`. You will see that the 3 volumes are "xvdf" "xvdg" and "xvdh" of size 10GB each respectively as shown below.
 
     ![lsblk](./images/lsblk.png)
 
@@ -84,7 +84,7 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
     ![df](./images/disk%20free.png)
 
-* Use gdisk utility to create a single partition on each of the 3 disks. First start with disk xvdf.
+* Use `gdisk` utility to create a single partition on each of the 3 disks. First start with disk xvdf.
 
     `sudo gdisk /dev/xvdf`
 
@@ -105,5 +105,20 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 * Use `lsblk` utility to view the newly configured partition on each of the 3 disks.
 
 ! [lsblk](./images/partition%20check.png)
+
+* Install `lvm2` package using `sudo yum install -y lvm2 `
+
+ ![lvm2](./images/lvm2.png)
+
+  ![lvm2](./images/lvm.png)
+
+* Type `sudo lvmdiskscan` command to check for available partitions.
+
+ ![lvmdiskscan](./images/lvmdiskscan.png)
+
+* Use `pvcreate` utility to mark each of 3 disks as physical volumes (PVs) to be used by LVM
+ 
+
+
 
 
