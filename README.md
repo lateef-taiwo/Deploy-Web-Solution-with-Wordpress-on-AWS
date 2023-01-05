@@ -326,7 +326,7 @@ ______
 ____________
 
 ###  STEP 4 - INSTALL MYSQL ON DATABASE SERVER
-
+* Update repository and install mysql-server
   `sudo yum update`
 
   ![update](./images/update%20db.png)
@@ -337,4 +337,16 @@ ____________
 
   ![mysql](./images/mysql%20install%20complete.png)
 
-   
+* Verify that the service is up and running by using `sudo systemctl status mysqld`, if it is not running, restart the service and enable it so it will be running even after reboot:
+
+  `sudo systemctl restart mysqld`
+
+  `sudo systemctl enable mysqld`
+
+   ![status](./images/mysql%20status.png)
+
+--------
+________
+
+### STEP 5 - CONFIGURE DATABASE TO WORK WITH WORDPRESS
+Open MySQL port 3306 on DB Server EC2. For extra security, you shall allow access to the DB server ONLY from your Web Server’s IP address, so in the Inbound Rule configuration specify source as /32
