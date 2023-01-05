@@ -10,8 +10,9 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 
 ![Three tier](./images/Three%20tier%20architecture.png)
 
-
-### PREPARE A WEB SERVER
+-------
+_______
+### STEP 1 - PREPARE A WEB SERVER
 * Launch an EC2 instance that will serve as "Web Server". I will choose Red hat Operating system for the servers.
 
 * Login to the AWS console
@@ -210,5 +211,18 @@ important)
 
   ![fstab](./images/etcfstab.png)
 
+* Test the configuration and reload the daemon
+ 
+   `sudo mount -a`
+   `sudo systemctl daemon-reload`
 
+   ![mount](./images/mount.png)
+ 
+* Verify your setup by running `df -h`, output must look like the one in the image below:
 
+  ![verify](./images/verify%20config.png)
+
+------
+________
+### STEP 2 - PREPARE THE DATABASE SERVER
+* Launch a second RedHat EC2 instance that will have a role – ‘DB Server’
