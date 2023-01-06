@@ -349,15 +349,49 @@ ____________
 ________
 
 ### STEP 5 - CONFIGURE DATABASE TO WORK WITH WORDPRESS
+
+      sudo mysql
+      CREATE DATABASE wordpress;
+      CREATE USER `myuser`@`<Web-Server-Private-IP-Address>` IDENTIFIED BY 'mypass';
+      GRANT ALL ON wordpress.* TO 'myuser'@'<Web-Server-Private-IP-Address>';
+      FLUSH PRIVILEGES;
+      SHOW DATABASES;
+      exit
+
+   ![database](./images/show%20databases.png)
+
+-----------
+___________
+
+### STEP 6 - CONFIGURE WORDPRESS TO CONNECT TO THE REMOTE DATABASE
 Open MySQL port 3306 on DB Server EC2. For extra security, you shall allow access to the DB server ONLY from your Web Server’s IP address, so in the Inbound Rule configuration specify source as /32
 
 ![security gropus](./images/Security%20groups.png)
 
-* Install MySQL client and test that you can connect from your Web Server to your DB server by using mysql-client.
+* Install MySQL client and test that you can connect to your DB server from your Web Server  by using mysql-client.
 
   `sudo yum install mysql`
 
   ![mysql client](./images/mysql%20client.png)
-  
 
+* Test that you can connect to the database server from the web server.
+  
+   ![database](./images/db%20connected.png)
+
+* Verify if you can successfully execute Show Databases; command and see a list of existing databases.
+
+  ![show database](./images/show%20databases%202.png)
+
+* Change permissions and configuration so Apache could use WordPress:
+
+      sudo chown -R apache:apache /var/www/html/wordpress
+      sudo chcon -t httpd_sys_content_t /var/www/html/wordpress -R
+      sudo setsebool -P httpd_can_network_connect=1
+
+
+* Enable TCP port 80 in Inbound Rules configuration for your Web Server EC2 (enable from everywhere 0.0.0.0/0 or from your workstation’s IP).
+
+  ![sec group](./images/Sec%20groups.png)
+
+* Try to access from your browser the link to your WordPress `http://<Web-Server-Public-IP-Address>/wordpress/`
 
