@@ -358,7 +358,27 @@ ________
       SHOW DATABASES;
       exit
 
+
    ![database](./images/show%20databases.png)
+
+        GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;`
+
+        flush privileges;
+        select user, host from mysql.user;
+     
+   ![db-config](./images/db%20config.png)
+
+* Now edit mysql configuration file by typing `sudo vi /etc/my.cnf`. Add the following at the end of the file.
+
+      [mysqld]
+      bind-address=0.0.0.0
+  
+  ![Edit](./images/Edit%20mysql%20config.png)
+
+  ![Config](./images/mysql%20configuration.png)
+
+* Now, restart mysqld service using `sudo systemctl restart mysqld`
+
 
 -----------
 ___________
@@ -367,6 +387,11 @@ ___________
 Open MySQL port 3306 on DB Server EC2. For extra security, you shall allow access to the DB server ONLY from your Web Server’s IP address, so in the Inbound Rule configuration specify source as /32
 
 ![security gropus](./images/Security%20groups.png)
+
+* On the web server, edit wordpress configuration file.
+ 
+      cd /var/www/html/wordpress
+      vi wp-config.php
 
 * Install MySQL client and test that you can connect to your DB server from your Web Server  by using mysql-client.
 
