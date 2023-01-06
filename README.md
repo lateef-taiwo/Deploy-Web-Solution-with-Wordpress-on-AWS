@@ -1,5 +1,5 @@
 # Deploy-Web-Solution-with-Wordpress-on-AWS
-This repository explains the steps involved in  preparing storage infrastructure on two Linux servers and implementinga basic web solution using WordPress.
+This repository explains the steps involved in  preparing storage infrastructure on two Linux servers and implementing a basic web solution using WordPress.
 
 You will gain practical experience that demonstrates `three-tier architecture` while also making sure that the Linux servers' storage disks are properly partitioned and maintained using tools like `gdisk` and `LVM`, respectively. 
 
@@ -13,9 +13,9 @@ You will gain practical experience that demonstrates `three-tier architecture` w
 -------
 _______
 ### STEP 1 - PREPARE A WEB SERVER
-* Launch an EC2 instance that will serve as "Web Server". I will choose Red hat Operating system for the servers.
+* Launch an EC2 instance that will serve as "Web Server". I will choose Red Hat Enterprise Linux Operating system for the servers.
 
-* Login to the AWS console
+* Log in to the AWS console
 
 * Search for EC2 (Elastic Compute Cloud)
 
@@ -53,7 +53,7 @@ _______
 
     ![Attach](./images/Attach%20volume.png)
 
-    9.  Repeat steps `2` to `8` for two more volumes so that we can have the 3 volumes in all.
+    9.  Repeat steps `2` to `8` for two more volumes so that we can have 3 volumes.
 
     ![Attach](./images/Attach%20volume%202.png)
 
@@ -63,7 +63,7 @@ _______
 
     `cd ~/Downloads`
 
-* Change permissions for the private key file (.pem), otherwise you can get an error “Bad permission”
+* Change permissions for the private key file (.pem), otherwise you will get an error “Bad permission”
 
     `sudo chmod 0400 . pem`
 
@@ -361,10 +361,9 @@ ________
 
    ![database](./images/show%20databases.png)
 
-        GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;`
-
-        flush privileges;
-        select user, host from mysql.user;
+      GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;`
+      flush privileges;
+      select user, host from mysql.user;
      
    ![db-config](./images/db%20config.png)
 
