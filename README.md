@@ -392,6 +392,9 @@ Open MySQL port 3306 on DB Server EC2. For extra security, you shall allow acces
  
       cd /var/www/html/wordpress
       vi wp-config.php
+* Then restart httpd.
+
+  `sudo systemctl restart httpd`
 
 * Install MySQL client and test that you can connect to your DB server from your Web Server  by using mysql-client.
 
