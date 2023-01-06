@@ -400,6 +400,8 @@ Open MySQL port 3306 on DB Server EC2. For extra security, you shall allow acces
   `sudo mv /etc/httpd/conf.d/welcome.conf /etc/h│     Memory: 391.5M
 ttpd/conf.d/welcome.conf_backup`
 
+* Restart httpd. `sudo systemctl restart httpd`
+
 * Install MySQL client and test that you can connect to your DB server from your Web Server  by using mysql-client.
 
   `sudo yum install mysql`
@@ -419,11 +421,38 @@ ttpd/conf.d/welcome.conf_backup`
       sudo chown -R apache:apache /var/www/html/wordpress
       sudo chcon -t httpd_sys_content_t /var/www/html/wordpress -R
       sudo setsebool -P httpd_can_network_connect=1
+      sudo setsebool -P httpd_can_network_connect_db 1
 
 
 * Enable TCP port 80 in Inbound Rules configuration for your Web Server EC2 (enable from everywhere 0.0.0.0/0 or from your workstation’s IP).
 
   ![sec group](./images/Sec%20groups.png)
 
-* Try to access from your browser the link to your WordPress `http://<Web-Server-Public-IP-Address>/wordpress/`
+* Try to access from your browser the link to your WordPress `http://<Web-Server-Public-IP-Address>/wordpress/`. 
+
+![wordpress site](./images/Wordpess%20site.png)
+
+* Fill in your credentials to setup your account for your wordpress website.
+ If you see this message – it means your WordPress has successfully connected to your remote MySQL database.
+
+  ![wordpress](./images/Wordpress%20page.png)
+
+* Log in with your username and password
+
+  ![Login](./images/login%20to%20website.png)
+
+  ![Dashboard](./images/My%20dashboard.png)
+
+* You can visit my website by typing http://ec2-13-41-159-155.eu-west-2.compute.amazonaws.com/wordpress/. It will be customized later.
+
+  ![Website](./images/Website.png)
+
+---------
+_________
+
+### CONGRATULATIONS!!!
+You have learned how to configure Linux storage susbystem and have also deployed a full-scale Web Solution using WordPress CMS and MySQL RDBMS.
+
+
+
 
