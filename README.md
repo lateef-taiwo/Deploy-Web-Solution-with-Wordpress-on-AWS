@@ -395,6 +395,7 @@ Open MySQL port 3306 on DB Server EC2. For extra security, you shall allow acces
 * Then restart httpd.
 
   `sudo systemctl restart httpd`
+* Disable the default page of apache so that you ca view the wordpress on the internet.
 
 * Install MySQL client and test that you can connect to your DB server from your Web Server  by using mysql-client.
 
