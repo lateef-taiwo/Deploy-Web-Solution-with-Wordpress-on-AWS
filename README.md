@@ -93,7 +93,7 @@ _______
 
     * Type n to add a new partition. Press enter repeatedly to use the default values
 
-    * Type w to write partition changes to disk. T ype Y on prompt
+    * Type w to write partition changes to disk. Type Y on prompt
 
     ![gpt](./images/gpt1.png)
 
