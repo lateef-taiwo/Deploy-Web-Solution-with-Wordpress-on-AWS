@@ -387,10 +387,13 @@ Open MySQL port 3306 on DB Server EC2. For extra security, you shall allow acces
 
 ![security gropus](./images/Security%20groups.png)
 
-* On the web server, edit wordpress configuration file.
+* On the web server, edit wordpress configuration file as shown in the image below.
  
       cd /var/www/html/wordpress
       vi wp-config.php
+
+![](./images/wordpressconfig-file.png)
+
 * Then restart httpd.
 
   `sudo systemctl restart httpd`
