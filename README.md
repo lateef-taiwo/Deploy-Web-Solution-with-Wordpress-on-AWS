@@ -19,7 +19,7 @@ _______
 
 * Search for EC2 (Elastic Compute Cloud)
 
-* Select your preferred region (the closest to you) and launch a new EC2 instance and choose Red Hat
+* Select your preferred region (the closest to you) and launch a new EC2 instance and choose Red Hat. You can search for `RHEL-8.10.0_HVM-20240514-x86_64-76-Hourly2-GP3` under Application and OS Images (Amazon Machine Image)
 
 * Type a name e.g web-server Click create a new key pair, use any name of your choice as the name for the pem file and select `.pem`.
 
