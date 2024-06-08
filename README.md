@@ -214,6 +214,8 @@ important)
 * Test the configuration and reload the daemon
  
    `sudo mount -a`
+
+  
    `sudo systemctl daemon-reload`
 
    ![mount](./images/mount.png)
