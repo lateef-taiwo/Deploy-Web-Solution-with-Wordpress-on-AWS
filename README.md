@@ -353,21 +353,15 @@ ________
 ### STEP 5 - CONFIGURE DATABASE TO WORK WITH WORDPRESS
 
       sudo mysql
-      CREATE DATABASE wordpress;
+      CREATE DATABASE wordpress_database;
       CREATE USER `myuser`@`<Web-Server-Private-IP-Address>` IDENTIFIED BY 'mypass';
-      GRANT ALL ON wordpress.* TO 'myuser'@'<Web-Server-Private-IP-Address>';
+      GRANT ALL ON wordpress_database.* TO 'myuser'@'<Web-Server-Private-IP-Address>';
       FLUSH PRIVILEGES;
       SHOW DATABASES;
       exit
 
 
    ![database](./images/show%20databases.png)
-
-      GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;`
-      flush privileges;
-      select user, host from mysql.user;
-     
-   ![db-config](./images/db%20config.png)
 
 * Now edit mysql configuration file by typing `sudo vi /etc/my.cnf`. Add the following at the end of the file.
 
